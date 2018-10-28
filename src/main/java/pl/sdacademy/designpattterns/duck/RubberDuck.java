@@ -17,6 +17,7 @@ public class RubberDuck implements Duck {
     private Quacking quackingStrategy;
     private Flying flyingStrategy;
     private Swimming swimmingStrategy;
+    private DuckCoop duckCoop;
 
     public RubberDuck() {
         quackingStrategy = new SqueakNotQuacking();
@@ -47,5 +48,23 @@ public class RubberDuck implements Duck {
     @Override
     public Integer age() {
         return new Random().nextInt(10000) + 10;
+    }
+
+    @Override
+    public DuckEgg layEgg() {
+        return null;
+    }
+
+    @Override
+    public void walkTODuckCoop(DuckCoop duckCoop) {
+        System.out.println("Noop");
+    }
+
+    @Override
+    public void notify(DuckEgg egg) {
+        //wyswietlic pochawale
+//        System.out.println("Hurra new Egg");
+        String duckType = getClass().getSimpleName();
+        System.out.println(duckType + "Piii");
     }
 }

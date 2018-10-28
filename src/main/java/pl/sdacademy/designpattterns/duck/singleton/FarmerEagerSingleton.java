@@ -23,19 +23,19 @@ public class FarmerEagerSingleton {
         System.out.println(new Date() + " - Farmer is initialized");
     }
 
-    public void askVet(){
+    public void askVet() {
         contactToVet.callVet();
     }
 
-    public boolean addDuck( Duck duck){
+    public boolean addDuck(Duck duck) {
         return ducks.add(duck);
     }
 
-    public boolean removeDuck(Duck duck){
+    public boolean removeDuck(Duck duck) {
         return ducks.remove(duck);
     }
 
-    public List<Duck> getAllDucks(){
+    public List<Duck> getAllDucks() {
         return new ArrayList<>(ducks);
     }
 

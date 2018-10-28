@@ -37,6 +37,11 @@ public class DuckMain {
         farmer.askVet();
         System.out.println("=========");
         farmer.askVet();
+
+        DuckCoop duckCoop = new DuckCoop();
+        mallardDuck.walkTODuckCoop(duckCoop);
+        greenWingedTealDuck.walkTODuckCoop(duckCoop);
+        mallardDuck.layEgg();
     }
 
 }

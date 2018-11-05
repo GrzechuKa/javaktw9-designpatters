@@ -5,10 +5,11 @@ import pl.sdacademy.designpattterns.duck.strategy.Fodder;
 
 public class DuckMain {
 
-    public static void main(String[] args) {
-        Duck mallardDuck = new MallardDuck();
-        Duck rubberDuck = new RubberDuck();
-        Duck greenWingedTealDuck = new GreenWingedTealDuck();
+    public static void main(String[] args) throws IllegalAccessException {
+        DuckFactory duckFactory = new DuckFactory();
+        Duck mallardDuck = duckFactory.createDuck(DuckType.MALLARD_DUCK);
+        Duck rubberDuck = duckFactory.createDuck(DuckType.RUBBERDUCK);
+        Duck greenWingedTealDuck = duckFactory.createDuck(DuckType.GREENWINGEDTEALDUCK);
 
         mallardDuck.quack();
         mallardDuck.fly();

@@ -9,18 +9,22 @@ import pl.sdacademy.designpattterns.duck.strategy.swimming.Swimming;
 
 import java.util.Random;
 
-public class GreenWingedTealDuck implements Duck {
+public class AliveDuck implements Duck {
 
+
+    private String duckName;
     private Quacking quackingStrategy;
     private Flying flyingStrategy;
     private Swimming swimmingStrategy;
     private DuckCoop duckCoop;
+
     private Integer totalEgg;
 
-    public GreenWingedTealDuck() {
-        quackingStrategy = new StandardQuacking();
-        flyingStrategy = new WingedFlying();
-        swimmingStrategy = new StandardSwimming();
+    public AliveDuck(String duckName, Quacking quackingStrategy, Flying flyingStrategy, Swimming swimmingStrategy) {
+        this.duckName = duckName;
+        this.quackingStrategy = quackingStrategy;
+        this.flyingStrategy = flyingStrategy;
+        this.swimmingStrategy = swimmingStrategy;
         totalEgg = 0;
     }
 
@@ -48,6 +52,7 @@ public class GreenWingedTealDuck implements Duck {
     public Integer age() {
         return new Random().nextInt(1000) + 10;
     }
+
     @Override
     public DuckEgg layEgg() {
         //stworzyć jajo
@@ -71,7 +76,11 @@ public class GreenWingedTealDuck implements Duck {
     public void notify(DuckEgg egg) {
         //wyswietlic pochawale
 //        System.out.println("Hurra new Egg");
-        String duckType = getClass().getSimpleName();
-        System.out.println(duckType + ":Gret egg!");
+        System.out.println(duckName + ":Gret egg!");
     }
+
+
+
+
+
 }
